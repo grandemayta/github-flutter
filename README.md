@@ -1,8 +1,3 @@
-# github_flutter
+# Github Flutter
 
-A new Flutter project.
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+Find developers, check their repositories, followers and add to bookmarks
