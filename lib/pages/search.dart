@@ -8,13 +8,11 @@ class Search extends StatefulWidget {
 class SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(
           "Github Flutter"
-        ),
-        backgroundColor: Colors.orangeAccent,
+        )
       ),
       body: new Padding(
         padding: EdgeInsets.all(10.0),
@@ -31,10 +29,8 @@ class SearchState extends State<Search> {
             fontSize: 18.0,
           ),
         ),
-        color: Colors.orangeAccent,
-        textColor: Colors.white,
         padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(context, '/users-found')
       ),
     );
   }
