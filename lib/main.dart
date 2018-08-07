@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
+import './pages/search.dart';
+import './pages/users-found.dart';
 
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Github Flutter',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue
-      ),
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Text('It is works!'),
-        )
-      )
-    );
-  }
-}
+void main() => runApp(new MaterialApp(
+  home: Search(),
+  routes: <String, WidgetBuilder>{
+    "/search": (BuildContext context) => Search(),
+    "/users-found": (BuildContext context) => UsersFound()
+  },
+));
