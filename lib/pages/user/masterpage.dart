@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import './info.dart';
+import './followers.dart';
+import './repositories.dart';
 
-class User extends StatefulWidget {
+class UserMasterpage extends StatefulWidget {
   @override
-  createState() => UserState();
+  createState() => UserMasterpageState();
 }
 
-class UserState extends State<User> with SingleTickerProviderStateMixin {
+class UserMasterpageState extends State<UserMasterpage> with SingleTickerProviderStateMixin {
   TabController tabController;
 
   @override
@@ -23,15 +26,20 @@ class UserState extends State<User> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Gabriel Mayta Profile'),
+      ),
       body: new TabBarView(
         children: <Widget>[
-          Text('I am user page1!'),
-          Text('I am user page2!'),
-          Text('I am user page3!')
+          Info(),
+          Followers(),
+          Repositories()
         ],
         controller: tabController
       ),
       bottomNavigationBar: TabBar(
+        labelColor: Colors.orangeAccent,
+        indicatorColor: Colors.deepOrangeAccent,
         controller: tabController,
         tabs: <Widget>[
           Tab(

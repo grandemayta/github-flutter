@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/search.dart';
 import './pages/users.dart';
-import './pages/user.dart';
+import './pages/user/masterpage.dart';
 
 void main() => runApp(MaterialApp(
   theme: ThemeData(
@@ -24,6 +24,6 @@ void main() => runApp(MaterialApp(
   routes: <String, WidgetBuilder>{
     '/search': (BuildContext context) => Search(),
     '/users': (BuildContext context) => Users(),
-    '/user': (BuildContext context) => User()
+    '/user': (BuildContext context) => UserMasterpage()
   },
 ));
