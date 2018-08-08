@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/search.dart';
-import './pages/users-found.dart';
+import './pages/users.dart';
+import './pages/user.dart';
 
 void main() => runApp(MaterialApp(
   theme: ThemeData(
@@ -21,7 +22,8 @@ void main() => runApp(MaterialApp(
   ),
   home: Search(),
   routes: <String, WidgetBuilder>{
-    "/search": (BuildContext context) => Search(),
-    "/users-found": (BuildContext context) => UsersFound()
+    '/search': (BuildContext context) => Search(),
+    '/users': (BuildContext context) => Users(),
+    '/user': (BuildContext context) => User()
   },
 ));

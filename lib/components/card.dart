@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class CustomCard extends StatelessWidget {
   final String nickname;
   final String image;
+  final String page;
 
-  CustomCard(this.nickname, this.image);
+  CustomCard(this.nickname, this.image, [this.page]);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class CustomCard extends StatelessWidget {
               ),
               title: new Text(nickname),
               onTap: () {
-                print('You selected $nickname');
+                if (this.page != '') Navigator.pushNamed(context, page);
               },
             )
           ],

@@ -30,7 +30,7 @@ class SearchState extends State<Search> {
           ),
         ),
         padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-        onPressed: () => Navigator.pushNamed(context, '/users-found')
+        onPressed: () => Navigator.pushNamed(context, '/users')
       ),
     );
   }
