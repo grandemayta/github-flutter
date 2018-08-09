@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../components/card.dart';
 
 class Repositories extends StatefulWidget {
   @override
@@ -8,8 +9,10 @@ class Repositories extends StatefulWidget {
 class RepositoriesState extends State<Repositories> {
   @override
   Widget build(BuildContext context){
-    return  Center(
-      child: Text('Repositories Page'),
+    return ListView(
+      children: <Widget>[
+        CustomCard('my-angular-app', '', '', 'Javascript'),
+      ],
     );
   }
 }
