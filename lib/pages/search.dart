@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'users.dart';
 
 class Search extends StatefulWidget {
   @override
@@ -6,6 +7,21 @@ class Search extends StatefulWidget {
 }
 
 class SearchState extends State<Search> {
+  String inputTyped;
+
+  void updateInputSeach(value) {
+    setState(() {
+      inputTyped = value;
+    });
+  }
+
+  void goToUsers() {
+    var route = new MaterialPageRoute(
+      builder: (BuildContext context) => new Users(id: inputTyped)
+    );
+    Navigator.of(context).push(route);
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -20,6 +36,7 @@ class SearchState extends State<Search> {
           decoration: new InputDecoration(
             hintText: 'Search a developer'
           ),
+          onChanged: (value) => updateInputSeach(value)
         ),
       ),
       bottomNavigationBar: new RaisedButton(
@@ -30,7 +47,7 @@ class SearchState extends State<Search> {
           ),
         ),
         padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-        onPressed: () => Navigator.pushNamed(context, '/users')
+        onPressed: () => goToUsers()
       ),
     );
   }

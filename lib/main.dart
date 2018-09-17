@@ -24,6 +24,6 @@ void main() => runApp(MaterialApp(
   routes: <String, WidgetBuilder>{
     '/search': (BuildContext context) => Search(),
     '/users': (BuildContext context) => Users(),
-    '/user': (BuildContext context) => UserMasterpage()
+    '/users/detail': (BuildContext context) => UserMasterpage()
   },
 ));

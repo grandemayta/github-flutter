@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/user/masterpage.dart';
 
 class CustomCard extends StatelessWidget {
   final String nickname;
@@ -28,7 +29,12 @@ class CustomCard extends StatelessWidget {
         ),
         title: Text(nickname),
         onTap: () {
-          if (page.isNotEmpty) Navigator.pushNamed(context, page);
+          if (page.isNotEmpty) {
+            var route = new MaterialPageRoute(
+              builder: (BuildContext context) => new UserMasterpage(id: nickname)
+            );
+            Navigator.of(context).push(route);
+          }
         },
       );
     }

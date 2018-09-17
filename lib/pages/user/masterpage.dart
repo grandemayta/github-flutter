@@ -4,6 +4,10 @@ import './followers.dart';
 import './repositories.dart';
 
 class UserMasterpage extends StatefulWidget {
+  final String id;
+
+  UserMasterpage({ this.id }): super();
+
   @override
   createState() => UserMasterpageState();
 }
