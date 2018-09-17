@@ -31,12 +31,12 @@ class UserMasterpageState extends State<UserMasterpage> with SingleTickerProvide
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gabriel Mayta Profile'),
+        title: Text('User Profile'),
       ),
       body: new TabBarView(
         children: <Widget>[
-          Info(),
-          Followers(),
+          new Info(id: widget.id),
+          new Followers(id: widget.id),
           Repositories()
         ],
         controller: tabController

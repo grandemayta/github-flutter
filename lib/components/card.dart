@@ -9,6 +9,15 @@ class CustomCard extends StatelessWidget {
 
   CustomCard(this.nickname, this.image, [this.page, this.subtitle]);
 
+  changeRoute(context) {
+    if (page.isNotEmpty) {
+      var route = new MaterialPageRoute(
+        builder: (BuildContext context) => new UserMasterpage(id: nickname)
+      );
+      Navigator.of(context).push(route);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     ListTile listTile;
@@ -28,14 +37,7 @@ class CustomCard extends StatelessWidget {
           ),
         ),
         title: Text(nickname),
-        onTap: () {
-          if (page.isNotEmpty) {
-            var route = new MaterialPageRoute(
-              builder: (BuildContext context) => new UserMasterpage(id: nickname)
-            );
-            Navigator.of(context).push(route);
-          }
-        },
+        onTap: () => changeRoute(context)
       );
     }
 
@@ -44,9 +46,7 @@ class CustomCard extends StatelessWidget {
         contentPadding: EdgeInsets.all(10.0),
         title: Text(nickname),
         subtitle: Text(subtitle),
-        onTap: () {
-          if (page.isNotEmpty) Navigator.pushNamed(context, page);
-        },
+        onTap: () => changeRoute(context)
       );
     }
 

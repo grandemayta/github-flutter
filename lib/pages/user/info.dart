@@ -1,11 +1,42 @@
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
 class Info extends StatefulWidget {
+  final String id;
+
+  Info({ this.id }) : super();
+
   @override
   createState() => InfoState();
 }
 
 class InfoState extends State<Info> {
+  final String url = 'https://api.github.com/users/';
+  String name = '';
+  String bio = '';
+  String avatarUrl = '';
+
+  @override
+  void initState() {
+    super.initState();
+    this.getUserDetail();
+  }
+
+  Future<String> getUserDetail() async {
+    var request = await http.get(url + widget.id);
+
+    setState(() {
+      var response = json.decode(request.body);
+      name = response['name'] == null ? '' : response['name'];
+      bio = response['bio'] == null ? '' : response['bio'];
+      avatarUrl = response['avatar_url'];
+    });
+
+    return 'Success';
+  }
+
   @override
   Widget build(BuildContext context){
     return  Center(
@@ -19,14 +50,14 @@ class InfoState extends State<Info> {
               shape: BoxShape.circle,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage('https://media.licdn.com/dms/image/C4E03AQGmF6ar78rs_g/profile-displayphoto-shrink_200_200/0?e=1538006400&v=beta&t=EkfAcEwyV00DpXSRP7UT_QVQIj0P332kEzkwgXE0jFs')
+                image: NetworkImage(avatarUrl)
               )
             ),
           ),
           Padding(
             padding: EdgeInsets.only(top: 20.0),
             child: Text(
-              'Gabriel Mayta',
+              name,
               style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.bold
@@ -36,7 +67,7 @@ class InfoState extends State<Info> {
           Padding(
             padding: EdgeInsets.only(top: 4.0),
             child: Text(
-              'Frontend Developer at Accenture',
+              bio,
               style: TextStyle(
                 fontSize: 12.0
               ),
