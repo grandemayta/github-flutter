@@ -37,7 +37,7 @@ class UserMasterpageState extends State<UserMasterpage> with SingleTickerProvide
         children: <Widget>[
           new Info(id: widget.id),
           new Followers(id: widget.id),
-          Repositories()
+          new Repositories(id: widget.id)
         ],
         controller: tabController
       ),
