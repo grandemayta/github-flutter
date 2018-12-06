@@ -1,4 +1,4 @@
-package com.example.githubflutter;
+package com.grandemayta.githubflutter;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
