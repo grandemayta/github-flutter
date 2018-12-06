@@ -39,7 +39,7 @@ class UsersState extends State<Users> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(
-          "Github Flutter"
+          "Social Dev"
         ),
       ),
       body: ListView.builder(

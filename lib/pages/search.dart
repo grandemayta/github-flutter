@@ -27,7 +27,7 @@ class SearchState extends State<Search> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(
-          "Github Flutter"
+          "Social Dev"
         )
       ),
       body: new Padding(

@@ -1,3 +1,3 @@
-# Github Flutter
+# Social Dev
 
-Find developers, check their repositories, followers and add to bookmarks
+App developed with Flutter. Find developers, check their repositories, followers, ecc.
