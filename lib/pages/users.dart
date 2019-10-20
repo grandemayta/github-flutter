@@ -36,20 +36,20 @@ class UsersState extends State<Users> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
           "Social Dev"
         ),
       ),
       body: ListView.builder(
         itemCount: data == null ? 0 : data.length,
         itemBuilder: (BuildContext contex, int index) {
-          return new CustomCard(data[index]['login'], data[index]['avatar_url'], '/users/detail');
+          return CustomCard(data[index]['login'], data[index]['avatar_url'], '/users/detail');
         },
       ),
-      floatingActionButton: new FloatingActionButton(
-        child: new Icon(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
           Icons.search,
           size: 30.0,
         ),
